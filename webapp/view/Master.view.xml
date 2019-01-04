@@ -1,0 +1,44 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="be.planning.controller.Master"
+	xmlns:f="sap.f" height="100%" xmlns:unified="sap.ui.unified" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<PlanningCalendar id="PC1" startDate="{path: 'defaults>/StartDate'}" rows="{path: '/OrderSet'}" appointmentsVisualization="Filled"
+			appointmentSelect="handleAppointmentSelect" showEmptyIntervalHeaders="false" showWeekNumbers="true" stickyHeader="true">
+			<toolbarContent>
+				<Title text="Planning board" titleStyle="H4"/>
+			</toolbarContent>
+			<views>
+				<PlanningCalendarView
+					key="Hour"
+					intervalType="Hour"
+					description="Hours view"
+					intervalsS="2"
+					intervalsM="4"
+					intervalsL="6"
+					showSubIntervals="true">
+				</PlanningCalendarView>
+				<PlanningCalendarView
+					key="Day"
+					intervalType="Day"
+					description="Days view"
+					intervalsS="1"
+					intervalsM="3"
+					intervalsL="7"
+					showSubIntervals="true">
+				</PlanningCalendarView>
+			</views>	
+			<rows>
+				<PlanningCalendarRow icon="sap-icon://bus-public-transport" title="{DriverName}" text="" appointments="{path : 'To_WDO', templateShareable: 'true'}" 
+					nonWorkingDays="{defaults>/FreeDays}" nonWorkingHours= "{defaults>/FreeHours}">
+					<appointments>
+						<unified:CalendarAppointment startDate="{StartDate}" endDate="{EndDate}" icon="" title="{Title}" 
+							text="Vehicle ID: {WDOId}, Vehicle ID: {VehicleID}, Vehicle type: {VehicleType}, Route: {Route}, Cleaning object: {CleaningObject}" type="{Type}">
+							<unified:customData>
+								<core:CustomData key="WDOId" value="{WDOId}" />
+							</unified:customData>
+						</unified:CalendarAppointment>
+					</appointments>
+				</PlanningCalendarRow>
+			</rows>
+		</PlanningCalendar>
+	</Page>
+</core:View>

@@ -1,0 +1,69 @@
+<m:View displayBlock="true" controllerName="be.planning.controller.Detail" height="100%"
+		xmlns:f="sap.f"
+		xmlns="sap.uxap"
+		xmlns:m="sap.m">
+	
+	<ObjectPageLayout>
+		 <headerTitle>
+			<ObjectPageHeader objectTitle="ID: {WDOId}">
+				<actions>
+					<ObjectPageHeaderActionButton type="Transparent"
+							icon="sap-icon://full-screen"
+							press="handleFullScreen"
+							tooltip="Enter Full Screen Mode"
+							visible="{= ${ui>/actionButtonsInfo/midColumn/fullScreen} !== null }" />
+					<ObjectPageHeaderActionButton type="Transparent"
+							icon="sap-icon://exit-full-screen"
+							press="handleExitFullScreen"
+							tooltip="Exit Full Screen Mode"
+							visible="{= ${ui>/actionButtonsInfo/midColumn/exitFullScreen} !== null }" />
+					<ObjectPageHeaderActionButton type="Transparent"
+							icon="sap-icon://decline"
+							press="handleClose"
+							tooltip="Close column"
+							visible="{= ${ui>/actionButtonsInfo/midColumn/closeColumn} !== null }" />
+				</actions>
+			</ObjectPageHeader>
+		</headerTitle>
+		<headerContent>
+			<m:Label text="Personal description"/>                                                
+		</headerContent>
+	</ObjectPageLayout>
+	
+	<!--
+	<DynamicPage toggleHeaderOnTitleClick="false">
+		<title>
+			<DynamicPageTitle>
+				<heading>
+					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+						<m:Title text="" wrapping="true" class="sapUiTinyMarginEnd"/>
+					</m:FlexBox>
+				</heading>
+
+				<navigationActions>
+					<m:OverflowToolbarButton
+							type="Transparent"
+							icon="sap-icon://full-screen"
+							press="handleFullScreen"
+							tooltip="Enter Full Screen Mode"
+							visible="{= ${ui>/actionButtonsInfo/midColumn/fullScreen} !== null }"/>
+					<m:OverflowToolbarButton
+							type="Transparent"
+							icon="sap-icon://exit-full-screen"
+							press="handleExitFullScreen"
+							tooltip="Exit Full Screen Mode"
+							visible="{= ${ui>/actionButtonsInfo/midColumn/exitFullScreen} !== null }"/>
+					<m:OverflowToolbarButton
+							type="Transparent"
+							icon="sap-icon://decline"
+							press="handleClose"
+							tooltip="Close column"
+							visible="{= ${ui>/actionButtonsInfo/midColumn/closeColumn} !== null }"/>
+				</navigationActions>
+			</DynamicPageTitle>
+		</title>
+		<content>
+			<m:Text text="ID: {WDOId}" />
+		</content>
+	</DynamicPage> -->
+</m:View>
