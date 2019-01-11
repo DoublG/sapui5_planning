@@ -31,6 +31,19 @@ module.exports = function(grunt) {
     }
   });
 
+  //documentation
+  grunt.loadNpmTasks('grunt-jsdoc');
+  grunt.config.merge({
+    jsdoc: {
+      dist: {
+        src: ['README.md', 'webapp/**/*.js', 'webapp/**/*.xml'],
+        options: {
+          destination: 'doc'
+        }
+      }
+    }
+  });
+
   //test optimized version localy
   grunt.loadNpmTasks('grunt-connect-proxy');
 

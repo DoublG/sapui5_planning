@@ -4,6 +4,13 @@ sap.ui.define([
 ], function (JSONModel, Device) {
 	"use strict";
 
+	/**
+	 * @class be.planning.model.models
+	 * @property {sap.ui.model.json.JSONModel} createDeviceModel
+	 * @property {sap.ui.model.json.JSONModel} createDefaultModel
+	 * @property {sap.ui.model.json.JSONModel} createUIModel
+	 * @returns {Object} create device models
+	 */
 	return {
 
 		createDeviceModel: function () {
@@ -11,7 +18,7 @@ sap.ui.define([
 			oModel.setDefaultBindingMode("OneWay");
 			return oModel;
 		},
-		
+
 		createDefaultModel: function (){
 			var oModel = new JSONModel();
 			oModel.setDefaultBindingMode("OneWay");
@@ -22,7 +29,7 @@ sap.ui.define([
 			});
 			return oModel;
 		},
-		
+
 		createUIModel: function(){
 			var oModel = new JSONModel();
 			oModel.setDefaultBindingMode("OneWay");

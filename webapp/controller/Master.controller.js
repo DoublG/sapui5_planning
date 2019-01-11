@@ -4,6 +4,10 @@ sap.ui.define([
 ], function (Controller, JSONModel) {
 	"use strict";
 
+	/**
+		* @class be.planning.view.Master
+		* @extends sap.ui.core.mvc.Controller
+		*/
 	return Controller.extend("be.planning.controller.Master", {
 
 		/**
@@ -14,12 +18,17 @@ sap.ui.define([
 		onInit: function () {
 			this.oOwnerComponent = this.getOwnerComponent();
 		},
-		
+
+		/**
+		 * handle AppointmentSelect
+		 * @instance
+		 * @memberOf be.planning.view.Master
+		 */
 		handleAppointmentSelect: function(oEvent){
 			var oAppointment = oEvent.getParameter("appointment");
 			var iWDOId = oAppointment.data("WDOId");
 			var oNextUIState = this.getOwnerComponent().getHelper().getNextUIState(1);
-			
+
 			this.oOwnerComponent.getRouter().navTo("Detail", {
 				"id": iWDOId,
 				"layout": oNextUIState.layout
