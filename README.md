@@ -19,6 +19,10 @@ npm install
 ```
 
 ## Start local development server with livereload
+
+Please note that you need to install the following browser plugin.
+http://livereload.com/
+
 ```bash
 grunt dev-server
 ```
