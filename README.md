@@ -13,6 +13,7 @@ Application to test multiple features of the framework:
 ## Local setup
 ```bash
 git clone https://github.com/DoublG/sapui5_planning
+cd sapui5_planning
 npm config set @sap:registry=https://npm.sap.com
 npm install
 ```
