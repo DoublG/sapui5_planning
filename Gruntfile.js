@@ -37,7 +37,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.registerTask('dist-server', ["clean", "build", "configureProxies:resources", "connect:local_dist_server"]);
 
-	//devserver with livereload (http://livereload.com/)
+  //devserver with livereload (http://livereload.com/)
   grunt.registerTask('dev-server', ["configureProxies:resources", "connect:local_dev_server", "watch"]);
 
   var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
   grunt.config.merge({
     connect: {
 
-			//distribution server
+      //distribution server
       local_dist_server: {
         options: {
           port: 1337,
@@ -60,12 +60,12 @@ module.exports = function(grunt) {
           }
         }
       },
-			//developments server
+      //developments server
       local_dev_server: {
         options: {
           port: 1337,
           open: true,
-					livereload: true,
+          livereload: true,
           middleware: function(connect) {
             return [
               proxySnippet,
