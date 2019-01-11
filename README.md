@@ -11,12 +11,18 @@ Application to test multiple features of the framework:
 * extension points
 
 ## Local setup
-* git clone https://github.com/DoublG/sapui5_planning
-* npm config set @sap:registry=https://npm.sap.com
-* npm install
+```bash
+git clone https://github.com/DoublG/sapui5_planning
+npm config set @sap:registry=https://npm.sap.com
+npm install
+```
 
 ## Start local development server with livereload
-* grunt dev-server
+```bash
+grunt dev-server
+```
 
 ## Build and start local server
-* grunt dist-server
+```bash
+grunt dist-server
+```
